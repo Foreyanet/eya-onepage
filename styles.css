@@ -32,3 +32,9 @@ li{margin:6px 0}
   h1{font-size:28px}
   .brand{font-size:20px}
 }
+/* Fix: keep top navigation clickable (prevent mailto/CTA overlay) */
+.site-header{
+  position: relative;
+  z-index: 9999;
+}
+
