@@ -37,6 +37,17 @@ p{font-size:16px;line-height:1.7;color:var(--text);margin:6px 0 10px}
 .lead{font-size:18px;color:var(--muted)}
 .section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
 .cta{display:inline-block;background:var(--gold);color:white;padding:10px 16px;border-radius:8px;margin-right:10px}
+  /* Make .btn behave like .cta (your hero buttons use .btn) */
+.btn{
+  display:inline-block;
+  background:var(--gold);
+  color:white;
+  padding:10px 16px;
+  border-radius:8px;
+  margin-right:10px;
+}
+.btn:hover{ text-decoration:none; opacity:0.92; }
+
 footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:14px;margin-top:24px}
 .badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:4px 8px;border-radius:999px;font-size:12px;margin-top:4px}
 .small{font-size:14px;color:var(--muted)}
@@ -105,14 +116,13 @@ li{margin:6px 0}
   <div class="container">
     <div class="header">
       <div class="brand">Yi‑Ya LearnSpeak</div>
-      <div class="nav">
-       <a href="#about">What Yi-Ya Is / Is Not</a>
-<a href="#collaboration">How to Use Yi-Ya</a>
-<a href="#contact">How to Refer to Yi-Ya</a>
+     <div class="nav">
+  <a href="#isnot">What Yi-Ya Is / Is Not</a>
+  <a href="#use">How to Use Yi-Ya</a>
+  <a href="#refer">How to Refer to Yi-Ya</a>
+  <a class="badge" href="http://www.yyxy.org" rel="noopener">中文 / CN</a>
+</div>
 
-        <a class="badge" href="http://www.yyxy.org" rel="noopener">中文 / CN</a>
-      </div>
-    </div>
 
     <section class="hero" id="top">
       <h1>Yi-Ya is not a project or product, but a shared research framework for observing and comparing early speech onset across independent studies.
@@ -120,24 +130,55 @@ li{margin:6px 0}
       <p class="lead">An international research initiative focused on the emergence and organization of early speech during the first three years of life.</p>
 <p class="muted">The framework defines a shared research space for observing, quantifying, and comparing early speech onset across individuals, languages, and cultural contexts, using family-based, low-burden, and cross-comparable approaches.</p >
       <div style="margin-top:14px;">
-        <a class="cta" href="#about">What Yi-Ya Is/ Is Not</a>
-        <a class="cta" href="#collaboration">How to Use Yi-Ya</a>
-        <a class="cta" href="#contact">How to Refer to Yi-Ya</a> 
+        <a class="btn" href="#isnot">What Yi-Ya Is / Is Not</a>
+<a class="btn" href="#use">How to Use Yi-Ya</a>
+<a class="btn" href="#refer">How to Refer to Yi-Ya</a>
+
       </div>
     </section>
-
-    <section class="section" id="about">
+<section class="section" id="isnot">
   <h2>What Yi-Ya Is / Is Not</h2>
-  ...
-</section
 
-  <section class="section" id="collaboration">...</section>
-<section class="section" id="contact">...</section>
+  <h3>Yi-Ya is</h3>
+  <ul>
+    <li>A shared research framework for observing and comparing early speech onset (0–3) across independent studies.</li>
+    <li>A reference layer (core constructs + reporting logic) that supports cross-study and cross-language comparability.</li>
+    <li>Family-based and low-burden in implementation, while remaining compatible with local ethics and lab practices.</li>
+  </ul>
 
+  <h3>Yi-Ya is not</h3>
+  <ul>
+    <li>Not a product, app, or commercial platform.</li>
+    <li>Not a single unified protocol imposed on participating labs.</li>
+    <li>Not a claim that replaces existing theories—rather, it complements them with a shared descriptive backbone.</li>
+  </ul>
+</section>
 
-      <h2>Scientific Question</h2>
-      <p>How does language begin to form inside the infant brain <em>before</em> semantic understanding emerges?</p>
-    </section>
+<section class="section" id="use">
+  <h2>How to Use Yi-Ya</h2>
+  <ul>
+    <li>Define your own research question and design as usual (Yi-Ya does not constrain methods).</li>
+    <li>Use Yi-Ya’s core constructs to describe early vocal units and developmental trajectories in a comparable way.</li>
+    <li>Optionally adopt templates/tools (logs, tagging sheets, minimal reporting dimensions) if helpful.</li>
+    <li>Report findings using the shared logic so results can be compared across sites and languages.</li>
+  </ul>
+</section>
+
+<section class="section" id="refer">
+  <h2>How to Refer to Yi-Ya</h2>
+  <p>Recommended phrasing:</p>
+  <ul>
+    <li><strong>“Yi-Ya is a shared research framework for early speech onset (0–3).”</strong></li>
+    <li><strong>“Our study adopts the Yi-Ya framework for cross-comparable reporting of early vocal development.”</strong></li>
+  </ul>
+  <p class="small">If you cite theoretical grounding, you may reference the “Initial-Final Induction Principle” (paper + patent) as the origin of the framework’s descriptive logic.</p>
+</section>
+
+<section class="section" id="question">
+  <h2>Scientific Question</h2>
+  <p>How does language begin to form inside the infant brain <em>before</em> semantic understanding emerges?</p>
+</section>
+
 
     <section class="section">
       <h2>Theoretical Basis</h2>
@@ -211,6 +252,7 @@ All data collection, experimental design, and analytical procedures remain fully
   </div>
 </body>
 </html>
+
 
 
 
