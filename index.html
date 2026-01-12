@@ -110,6 +110,20 @@ li{margin:6px 0}
   font-size: 15px;
 }
 
+  /* ===== Emergency fix: force single-column layout (desktop) ===== */
+html, body, .container {
+  column-count: 1 !important;
+  column-width: auto !important;
+  columns: auto !important;
+  column-gap: normal !important;
+  column-rule: none !important;
+}
+
+/* prevent any section from being treated as column content */
+.section, .hero, .header, footer {
+  break-inside: auto !important;
+}
+
 </style>
 </head>
 <body>
@@ -252,6 +266,7 @@ All data collection, experimental design, and analytical procedures remain fully
   </div>
 </body>
 </html>
+
 
 
 
