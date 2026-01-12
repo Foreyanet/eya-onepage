@@ -1,316 +1,344 @@
-
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Yi-Ya —— A Shared Research Framework for Early Speech Onset (0-3). </title>
-<meta name="description" content="Yi‑Ya LearnSpeak: a unified research platform to study how language begins to form in the infant brain (0–3 years).">
-<style>
-hr.divider{
-  border: none;
-  border-top: 1px solid var(--line);
-  margin: 18px 0;
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yi-Ya — A Shared Research Framework for Early Speech Onset (0–3)</title>
+  <meta name="description" content="Yi-Ya LearnSpeak: a shared research framework to study how early speech begins and organizes during the first three years of life." />
 
-/* Light Gold Scientific Premium theme */
-:root{
-  --gold:#BE9646;
-  --text:#1a1a1a;
-  --muted:#555;
-  --bg:#fffdf8;
-  --card:#ffffff;
-  --line:#eee0c7;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif; color:var(--text); background:var(--bg);}
-a{color:var(--gold);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:980px;margin:0 auto;padding:24px}
-.header{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
-.brand{font-weight:700;letter-spacing:0.5px;color:var(--gold);font-size:22px}
-.nav a{margin-left:16px;font-size:15px}
-.hero{padding:48px 0 24px}
-h1{font-size:34px;line-height:1.2;margin:0 0 12px;color:var(--gold)}
-h2{font-size:22px;margin:28px 0 8px;color:var(--gold)}
-p{font-size:16px;line-height:1.7;color:var(--text);margin:6px 0 10px}
-.lead{font-size:18px;color:var(--muted)}
-.section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
-.cta{display:inline-block;background:var(--gold);color:white;padding:10px 16px;border-radius:8px;margin-right:10px}
-  /* Make .btn behave like .cta (your hero buttons use .btn) */
-.btn{
-  display:inline-block;
-  background:var(--gold);
-  color:white;
-  padding:10px 16px;
-  border-radius:8px;
-  margin-right:10px;
-}
-.btn:hover{ text-decoration:none; opacity:0.92; }
+  <style>
+    /* =========================
+       Light Gold Scientific Premium (Stable)
+       ========================= */
 
-footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:14px;margin-top:24px}
-.badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:4px 8px;border-radius:999px;font-size:12px;margin-top:4px}
-.small{font-size:14px;color:var(--muted)}
-ul{margin:8px 0 16px 20px}
-li{margin:6px 0}
-@media (max-width:600px){
-  /* --- Custom Enhancements by William --- */
+    :root{
+      --gold:#BE9646;
+      --text:#1a1a1a;
+      --muted:#555;
+      --bg:#fffdf8;
+      --card:#ffffff;
+      --line:#eee0c7;
+    }
 
-  /* Fix CTA buttons on mobile */
-  .hero .cta {
-    display: inline-block;
-    width: auto;
-    margin: 8px 8px 0 0;
-    padding: 10px 14px;
-    white-space: nowrap;
-    text-decoration: none;
-  }
+    *{ box-sizing:border-box; }
 
-/* 1) 邮箱颜色变成灰色、更低调 */
-.email {
-  color: #666 !important;
-  font-size: 16px;
-  margin-bottom: 8px;
-  display: inline-block;
-}
+    html, body{
+      margin:0;
+      padding:0;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, "Noto Sans", "PingFang SC","Microsoft YaHei UI","Microsoft YaHei", sans-serif;
+      color:var(--text);
+      background:var(--bg);
+    }
 
-/* 2) 统一中英文割线样式 */
-.section {
-  border-top: 1px solid var(--line);
-  margin-top: 32px;
-  padding-top: 16px;
-}
+    /* Safety guards: prevent any accidental multi-column or layout splitting */
+    html, body, .container{
+      column-count:1 !important;
+      column-width:auto !important;
+      columns:auto !important;
+      column-gap:normal !important;
+      column-rule:none !important;
+    }
+    .container{ display:block !important; }
 
-/* 3) 调整副标题之间的空白，让整体更整齐 */
-.section h2 {
-  margin-top: 0;
-}
+    a{ color:var(--gold); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
 
-.section h3 {
-  margin-top: 12px;
-}
+    .container{
+      max-width:980px;
+      margin:0 auto;
+      padding:24px;
+    }
 
-  h1{font-size:28px}
-  .brand{font-size:20px}
-}
-/* email grey + low profile */
-.email a{
-  color: var(--muted);
-  font-size: 15px;
-}
-  /* divider before Lead Investigator / 项目负责人 */
-.section.divider{
-  margin-top: 28px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-}
-/* email style */
-.email a{
-  color: var(--muted);
-  font-size: 15px;
-}
+    .header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:22px 0;
+      border-bottom:1px solid var(--line);
+      flex-wrap:wrap;
+    }
 
-  /* ===== Emergency fix: force single-column layout (desktop) ===== */
-html, body, .container {
-  column-count: 1 !important;
-  column-width: auto !important;
-  columns: auto !important;
-  column-gap: normal !important;
-  column-rule: none !important;
-}
+    .brand{
+      font-weight:700;
+      letter-spacing:.5px;
+      color:var(--gold);
+      font-size:22px;
+      white-space:nowrap;
+    }
 
-/* prevent any section from being treated as column content */
-.section, .hero, .header, footer {
-  break-inside: auto !important;
-}
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav a{ font-size:15px; }
 
-/* ===== Emergency fix v2: prevent accidental grid/flex split ===== */
-.container{
-  display:block !important;
-}
-.section, .hero, .header, footer{
-  width:100% !important;
-  max-width:100% !important;
-}
+    .badge{
+      display:inline-block;
+      border:1px solid var(--gold);
+      color:var(--gold);
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      margin-top:2px;
+      white-space:nowrap;
+    }
 
-</style>
-  
+    .hero{
+      padding:48px 0 20px;
+    }
+
+    h1{
+      font-size:34px;
+      line-height:1.2;
+      margin:0 0 12px;
+      color:var(--gold);
+    }
+
+    h2{
+      font-size:22px;
+      margin:0 0 10px;
+      color:var(--gold);
+    }
+
+    h3{
+      margin:14px 0 8px;
+      font-size:16px;
+      color:var(--text);
+    }
+
+    p{
+      font-size:16px;
+      line-height:1.7;
+      color:var(--text);
+      margin:8px 0;
+    }
+
+    .lead{
+      font-size:18px;
+      color:var(--muted);
+      margin-top:10px;
+    }
+
+    .muted{
+      color:var(--muted);
+    }
+
+    .section{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:18px;
+      margin:16px 0;
+      width:100% !important;
+      max-width:100% !important;
+      break-inside:auto !important;
+    }
+
+    ul{ margin:10px 0 12px 20px; }
+    li{ margin:6px 0; }
+
+    .btn{
+      display:inline-block;
+      background:var(--gold);
+      color:#fff;
+      padding:10px 16px;
+      border-radius:8px;
+      margin:8px 10px 0 0;
+      white-space:nowrap;
+    }
+    .btn:hover{ text-decoration:none; opacity:.92; }
+
+    hr.divider{
+      border:none;
+      border-top:1px solid var(--line);
+      margin:18px 0;
+    }
+
+    .small{
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .email a{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:24px 0;
+      color:var(--muted);
+      font-size:14px;
+      margin-top:24px;
+    }
+
+    /* Mobile */
+    @media (max-width:600px){
+      h1{ font-size:28px; }
+      .brand{ font-size:20px; }
+      .container{ padding:18px; }
+      .hero{ padding:34px 0 12px; }
+      .btn{ padding:10px 14px; }
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
+    <!-- Header -->
     <div class="header">
-      <div class="brand">Yi‑Ya LearnSpeak</div>
-     <div class="nav">
-  <a href="#isnot">What Yi-Ya Is / Is Not</a>
-  <a href="#use">How to Use Yi-Ya</a>
-  <a href="#refer">How to Refer to Yi-Ya</a>
-  <a class="badge" href="http://www.yyxy.org" rel="noopener">中文 / CN</a>
-</div>
+      <div class="brand">Yi-Ya LearnSpeak</div>
+      <div class="nav">
+        <a href="#isnot">What Yi-Ya Is / Is Not</a>
+        <a href="#use">How to Use Yi-Ya</a>
+        <a href="#refer">How to Refer to Yi-Ya</a>
+        <a class="badge" href="http://www.yyxy.org" rel="noopener">中文 / CN</a>
+      </div>
+    </div>
 
-
+    <!-- Hero -->
     <section class="hero" id="top">
-      <h1>Yi-Ya is not a project or product, but a shared research framework for observing and comparing early speech onset across independent studies.
-</h1>
-      <p class="lead">An international research initiative focused on the emergence and organization of early speech during the first three years of life.</p>
-<p class="muted">The framework defines a shared research space for observing, quantifying, and comparing early speech onset across individuals, languages, and cultural contexts, using family-based, low-burden, and cross-comparable approaches.</p >
+      <h1>Yi-Ya is not a project or product, but a shared research framework for observing and comparing early speech onset across independent studies.</h1>
+
+      <p class="lead">
+        An international research initiative focused on the emergence and organization of early speech during the first three years of life.
+      </p>
+
+      <p class="muted">
+        The framework defines a shared research space for observing, quantifying, and comparing early speech onset across individuals, languages, and cultural contexts, using family-based, low-burden, and cross-comparable approaches.
+      </p>
+
       <div style="margin-top:14px;">
         <a class="btn" href="#isnot">What Yi-Ya Is / Is Not</a>
-<a class="btn" href="#use">How to Use Yi-Ya</a>
-<a class="btn" href="#refer">How to Refer to Yi-Ya</a>
-
+        <a class="btn" href="#use">How to Use Yi-Ya</a>
+        <a class="btn" href="#refer">How to Refer to Yi-Ya</a>
       </div>
     </section>
-<section class="section" id="isnot">
-  <h2>What Yi-Ya Is / Is Not</h2>
 
-  <h3>Yi-Ya is</h3>
-  <ul>
-    <li>A shared research framework for observing and comparing early speech onset (0–3) across independent studies.</li>
-    <li>A reference layer (core constructs + reporting logic) that supports cross-study and cross-language comparability.</li>
-    <li>Family-based and low-burden in implementation, while remaining compatible with local ethics and lab practices.</li>
-  </ul>
+    <!-- What Yi-Ya Is/Is Not -->
+    <section class="section" id="isnot">
+      <h2>What Yi-Ya Is / Is Not</h2>
 
-  <h3>Yi-Ya is not</h3>
-  <ul>
-    <li>Not a product, app, or commercial platform.</li>
-    <li>Not a single unified protocol imposed on participating labs.</li>
-    <li>Not a claim that replaces existing theories—rather, it complements them with a shared descriptive backbone.</li>
-  </ul>
-</section>
-
-<section class="section" id="use">
-  <h2>How to Use Yi-Ya</h2>
-  <ul>
-    <li>Define your own research question and design as usual (Yi-Ya does not constrain methods).</li>
-    <li>Use Yi-Ya’s core constructs to describe early vocal units and developmental trajectories in a comparable way.</li>
-    <li>Optionally adopt templates/tools (logs, tagging sheets, minimal reporting dimensions) if helpful.</li>
-    <li>Report findings using the shared logic so results can be compared across sites and languages.</li>
-  </ul>
-</section>
-
-<section class="section" id="refer">
-  <h2>How to Refer to Yi-Ya</h2>
-  <p>Recommended phrasing:</p>
-  <ul>
-    <li><strong>“Yi-Ya is a shared research framework for early speech onset (0–3).”</strong></li>
-    <li><strong>“Our study adopts the Yi-Ya framework for cross-comparable reporting of early vocal development.”</strong></li>
-  </ul>
-  <p class="small">If you cite theoretical grounding, you may reference the “Initial-Final Induction Principle” (paper + patent) as the origin of the framework’s descriptive logic.</p>
-</section>
-
-<section class="section" id="question">
-  <h2>Scientific Question</h2>
-  <p>How does language begin to form inside the infant brain <em>before</em> semantic understanding emerges?</p>
-</section>
-
-
-    <section class="section">
-      <h2>Theoretical Basis</h2>
-      <p>This program is grounded in the Initial‑Final Induction Principle, presented in the 2008 peer‑reviewed paper <em>The Potential Vocal Ability of Infants</em> and supported by the invention patent <em>Method and Device for Identifying Potential Vocal Characters in Infants</em>.</p>
-      <p>Instead of analyzing large corpora post‑language development, we study the <strong>birth</strong> of phonetic networks as they first emerge.</p>
-    </section>
-
-    <section class="section">
-      <h2>Research Platform</h2>
-      <p>Yi-Ya does not require a centralized experimental platform.
-
-Instead, it defines a shared reference layer that can be applied across diverse research settings to support the observation, documentation, and comparison of early speech onset.
-
-Where appropriate, reference materials, example measurement dimensions, or optional tools may be made available to assist researchers in organizing and reporting their observations.
-
-All data collection, experimental design, and analytical procedures remain fully determined by individual studies, in accordance with local research practices, technical setups, and ethical approvals.</p>
-    </section>
-
-    <section class="section" id="collab">
-      <h2>Phase‑1 Collaboration Model</h2>
-      <p class="phase1-intro">
-  In Phase-1, the Yi-Ya framework may be adopted by independent studies under the following guiding principles:
-</p>
-
+      <h3>Yi-Ya is</h3>
       <ul>
-        <li>Participating researchers define their own research questions, designs, and variables, in accordance with their disciplinary traditions and institutional requirements.</li>
-        <li>Yi-Ya provides a shared descriptive backbone—including core concepts and reporting logic—to support cross-study comparability without enforcing a single protocol.</li>
-        <li>Tools, templates, or reference materials (e.g., structured observation logs, tagging sheets, or optional digital tools) may be used optionally, but are not required.</li>
-        <li>Authorship, data handling, and ethical approvals remain entirely study-specific, and are determined independently by participating researchers and their institutions.</li>
+        <li>A shared research framework for observing and comparing early speech onset (0–3) across independent studies.</li>
+        <li>A reference layer (core constructs + reporting logic) that supports cross-study and cross-language comparability.</li>
+        <li>Family-based and low-burden in implementation, while remaining compatible with local ethics and lab practices.</li>
+      </ul>
+
+      <h3>Yi-Ya is not</h3>
+      <ul>
+        <li>Not a product, app, or commercial platform.</li>
+        <li>Not a single unified protocol imposed on participating labs.</li>
+        <li>Not a replacement for existing theories—rather, a shared descriptive backbone that can complement them.</li>
       </ul>
     </section>
 
-    <section class="section">
+    <!-- How to Use -->
+    <section class="section" id="use">
+      <h2>How to Use Yi-Ya</h2>
+      <ul>
+        <li>Define your own research question and study design as usual (Yi-Ya does not constrain methods).</li>
+        <li>Use Yi-Ya’s core constructs to describe early vocal units and developmental trajectories in a comparable way.</li>
+        <li>Optionally adopt templates/tools (logs, tagging sheets, minimal reporting dimensions) if helpful.</li>
+        <li>Report findings using the shared logic so results can be compared across sites and languages.</li>
+      </ul>
+    </section>
+
+    <!-- How to Refer -->
+    <section class="section" id="refer">
+      <h2>How to Refer to Yi-Ya</h2>
+      <p>Recommended phrasing:</p>
+      <ul>
+        <li><strong>“Yi-Ya is a shared research framework for early speech onset (0–3).”</strong></li>
+        <li><strong>“Our study adopts the Yi-Ya framework for cross-comparable reporting of early vocal development.”</strong></li>
+      </ul>
+      <p class="small">
+        If you cite theoretical grounding, you may reference the “Initial-Final Induction Principle” (paper + patent) as the origin of the framework’s descriptive logic.
+      </p>
+    </section>
+
+    <!-- Scientific Question -->
+    <section class="section" id="question">
+      <h2>Scientific Question</h2>
+      <p>How does language begin to form inside the infant brain <em>before</em> semantic understanding emerges?</p>
+    </section>
+
+    <!-- Theoretical Basis -->
+    <section class="section" id="theory">
+      <h2>Theoretical Basis</h2>
+      <p>
+        This program is grounded in the Initial-Final Induction Principle, presented in the 2008 peer-reviewed paper
+        <em>The Potential Vocal Ability of Infants</em> and supported by the invention patent
+        <em>Method and Device for Identifying Potential Vocal Characters in Infants</em>.
+      </p>
+      <p>Instead of analyzing large corpora post-language development, we study the <strong>birth</strong> of phonetic networks as they first emerge.</p>
+    </section>
+
+    <!-- Research Platform -->
+    <section class="section" id="platform">
+      <h2>Research Platform</h2>
+      <p>
+        Yi-Ya does not require a centralized experimental platform. Instead, it defines a shared reference layer that can be applied across diverse research settings
+        to support the observation, documentation, and comparison of early speech onset.
+      </p>
+      <p>
+        Where appropriate, reference materials, example measurement dimensions, or optional tools may be made available to assist researchers in organizing and reporting observations.
+        All data collection, experimental design, and analytical procedures remain fully determined by individual studies, in accordance with local practices and ethical approvals.
+      </p>
+    </section>
+
+    <!-- Phase-1 -->
+    <section class="section" id="collab">
+      <h2>Phase-1 Collaboration Model</h2>
+      <p class="muted">
+        In Phase-1, the Yi-Ya framework may be adopted by independent studies under the following guiding principles:
+      </p>
+      <ul>
+        <li>Participating researchers define their own research questions, designs, and variables.</li>
+        <li>Yi-Ya provides a shared descriptive backbone to support cross-study comparability without enforcing a single protocol.</li>
+        <li>Optional tools/templates may be used, but are not required.</li>
+        <li>Authorship, data handling, and ethical approvals remain study-specific.</li>
+      </ul>
+    </section>
+
+    <!-- Outputs -->
+    <section class="section" id="outputs">
       <h2>Expected Outputs & Scientific Goal</h2>
       <ul>
         <li>A descriptive model of early phonetic-network formation during the first three years of life.</li>
-        <li>Cross-linguistic, cross-study comparable records of early vocal development, organized using shared observational dimensions.</li>
-        <li>A research framework that supports systematic empirical investigation of early speech emergence prior to stable semantic understanding.</li>
+        <li>Cross-linguistic, cross-study comparable records of early vocal development using shared observational dimensions.</li>
+        <li>A framework supporting systematic investigation of early speech emergence prior to stable semantic understanding.</li>
       </ul>
     </section>
 
-<hr class="divider">
+    <hr class="divider" />
 
-<section class="section divider">
+    <!-- Team -->
+    <section class="section" id="team">
+      <h2>Lead Investigator</h2>
+      <h3>William Tang</h3>
+      <p><strong>Founder &amp; Principal Research Initiator</strong></p>
+      <p class="muted">
+        Founder of the “Initial-Final Induction Principle” and initiator of the Yi-Ya LearnSpeak research program.
+      </p>
+      <p class="email"><a href="mailto:mrtang@eya.net">mrtang@eya.net</a></p>
 
-  <h2>Lead Investigator</h2>
-  <h3>William Tang</h3>
-  <p>
-    <strong>Founder &amp; Principal Research Initiator</strong><br>
-    Founder of the “Initial–Final Induction Principle” and initiator of the Yi-Ya LearnSpeak research program.
-  </p>
+      <h2 style="margin-top:22px;">Advisor</h2>
+      <h3>Jim Tang</h3>
+      <p><strong>Strategic &amp; Technical Advisor</strong></p>
+      <p class="small">For first-contact emails, please include your lab name and PI.</p>
+    </section>
 
-  <!-- Email moved here (before Advisor) -->
-  <p class="email">
-  <a href="mailto:mrtang@eya.net">mrtang@eya.net</a>
-</p>
-
-  <h2>Advisor</h2>
-  <h3>Jim Tang</h3>
-  <p><strong>Strategic &amp; Technical Advisor</strong></p>
-
-  <p class="role-title"><strong>Role</strong></p>
-  <p>Provides strategic and technical advice in relation to early framework development and implementation discussions.</p>
-
-  <!-- Short, only for first contact -->
-  <p class="small note">For first-contact emails, please include your lab name and PI.</p>
-</section>
     <footer>
-      Yi‑Ya LearnSpeak — Global Infant Language Origin Research Program (0–3y) • <a href="http://www.yyxy.org" rel="noopener">中文站</a> • © 2026
+      Yi-Ya LearnSpeak — Global Infant Language Origin Research Program (0–3y) •
+      <a href="http://www.yyxy.org" rel="noopener">中文站</a> • © 2026
     </footer>
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
