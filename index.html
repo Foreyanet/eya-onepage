@@ -124,7 +124,17 @@ html, body, .container {
   break-inside: auto !important;
 }
 
+/* ===== Emergency fix v2: prevent accidental grid/flex split ===== */
+.container{
+  display:block !important;
+}
+.section, .hero, .header, footer{
+  width:100% !important;
+  max-width:100% !important;
+}
+
 </style>
+  
 </head>
 <body>
   <div class="container">
@@ -266,6 +276,7 @@ All data collection, experimental design, and analytical procedures remain fully
   </div>
 </body>
 </html>
+
 
 
 
