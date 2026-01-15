@@ -1,351 +1,224 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yi-Ya — A Shared Research Framework for Early Speech Onset (0–3)</title>
-  <meta name="description" content="Yi-Ya LearnSpeak: a shared research framework to study how early speech begins and organizes during the first three years of life." />
+<!-- =========================
+Phase-1 主体内容（HTML 结构稿）
+用法：
+1) 把这整段粘贴到你的 <div class="container"> 里（建议放在 header/nav 之后、footer 之前）
+2) 如你已有 hero/首页首屏，可保留 hero，把下方从 <section id="overview"> 起接在 hero 后面
+3) 若你要做导航锚点：#overview #scope #theory #agenda #practice #terms #collaboration #progress #team #site
+========================= -->
 
-  <style>
-    /* =========================
-       Light Gold Scientific Premium (Stable)
-       ========================= */
-
-    :root{
-      --gold:#BE9646;
-      --text:#1a1a1a;
-      --muted:#555;
-      --bg:#fffdf8;
-      --card:#ffffff;
-      --line:#eee0c7;
-    }
-
-    *{ box-sizing:border-box; }
-
-    html, body{
-      margin:0;
-      padding:0;
-      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-        Arial, "Noto Sans", "PingFang SC","Microsoft YaHei UI","Microsoft YaHei", sans-serif;
-      color:var(--text);
-      background:var(--bg);
-    }
-
-    /* Safety guards: prevent any accidental multi-column or layout splitting */
-    html, body, .container{
-      column-count:1 !important;
-      column-width:auto !important;
-      columns:auto !important;
-      column-gap:normal !important;
-      column-rule:none !important;
-    }
-    .container{ display:block !important; }
-
-    a{ color:var(--gold); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-
-    .container{
-      max-width:980px;
-      margin:0 auto;
-      padding:24px;
-    }
-
-    .header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      padding:22px 0;
-      border-bottom:1px solid var(--line);
-      flex-wrap:wrap;
-    }
-
-    .brand{
-      font-weight:700;
-      letter-spacing:.5px;
-      color:var(--gold);
-      font-size:22px;
-      white-space:nowrap;
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .nav a{ font-size:15px; }
-
-    .badge{
-      display:inline-block;
-      border:1px solid var(--gold);
-      color:var(--gold);
-      padding:4px 10px;
-      border-radius:999px;
-      font-size:12px;
-      margin-top:2px;
-      white-space:nowrap;
-    }
-
-    .hero{
-      padding:48px 0 20px;
-    }
-
-    h1{
-      font-size:34px;
-      line-height:1.2;
-      margin:0 0 12px;
-      color:var(--gold);
-    }
-
-    h2{
-      font-size:22px;
-      margin:0 0 10px;
-      color:var(--gold);
-    }
-
-    h3{
-      margin:14px 0 8px;
-      font-size:16px;
-      color:var(--text);
-    }
-
-    p{
-      font-size:16px;
-      line-height:1.7;
-      color:var(--text);
-      margin:8px 0;
-    }
-
-    .lead{
-      font-size:18px;
-      color:var(--muted);
-      margin-top:10px;
-    }
-
-    .muted{
-      color:var(--muted);
-    }
-
-    .section{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:10px;
-      padding:18px;
-      margin:16px 0;
-      width:100% !important;
-      max-width:100% !important;
-      break-inside:auto !important;
-    }
-
-    ul{ margin:10px 0 12px 20px; }
-    li{ margin:6px 0; }
-
-    .btn{
-      display:inline-block;
-      background:var(--gold);
-      color:#fff;
-      padding:10px 16px;
-      border-radius:8px;
-      margin:8px 10px 0 0;
-      white-space:nowrap;
-    }
-    .btn:hover{ text-decoration:none; opacity:.92; }
-
-    hr.divider{
-      border:none;
-      border-top:1px solid var(--line);
-      margin:18px 0;
-    }
-
-    .small{
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    .email a{
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    footer{
-      border-top:1px solid var(--line);
-      padding:24px 0;
-      color:var(--muted);
-      font-size:14px;
-      margin-top:24px;
-    }
-
-    /* Mobile */
-    @media (max-width:600px){
-      h1{ font-size:28px; }
-      .brand{ font-size:20px; }
-      .container{ padding:18px; }
-      .hero{ padding:34px 0 12px; }
-      .btn{ padding:10px 14px; }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <!-- Header -->
-    <div class="header">
-      <div class="brand">Yi-Ya LearnSpeak</div>
-      <div class="nav">
-        <a href="#isnot">What Yi-Ya Is / Is Not</a>
-        <a href="#use">How to Use Yi-Ya</a>
-        <a href="#refer">How to Refer to Yi-Ya</a>
-        <a class="badge" href="http://www.yyxy.org" rel="noopener">中文 / CN</a>
-      </div>
-    </div>
-
-    <!-- Hero -->
-    <section class="hero" id="top">
-      <h1>Yi-Ya is not a project or product, but a shared research framework for observing and comparing early speech onset across independent studies.</h1>
-
-      <p class="lead">
-        An international research initiative focused on the emergence and organization of early speech during the first three years of life.
-      </p>
-
-      <p class="muted">
-        The framework defines a shared research space for observing, quantifying, and comparing early speech onset across individuals, languages, and cultural contexts, using family-based, low-burden, and cross-comparable approaches.
-      </p>
-
-      <div style="margin-top:14px;">
-        <a class="btn" href="#isnot">What Yi-Ya Is / Is Not</a>
-        <a class="btn" href="#use">How to Use Yi-Ya</a>
-        <a class="btn" href="#refer">How to Refer to Yi-Ya</a>
-      </div>
-    </section>
-
-    <!-- What Yi-Ya Is/Is Not -->
-    <section class="section" id="isnot">
-      <h2>What Yi-Ya Is / Is Not</h2>
-
-      <h3>Yi-Ya is</h3>
-      <ul>
-        <li>A shared research framework for observing and comparing early speech onset (0–3) across independent studies.</li>
-        <li>A reference layer (core constructs + reporting logic) that supports cross-study and cross-language comparability.</li>
-        <li>Family-based and low-burden in implementation, while remaining compatible with local ethics and lab practices.</li>
-      </ul>
-
-      <h3>Yi-Ya is not</h3>
-      <ul>
-        <li>Not a product, app, or commercial platform.</li>
-        <li>Not a single unified protocol imposed on participating labs.</li>
-        <li>Not a replacement for existing theories—rather, a shared descriptive backbone that can complement them.</li>
-      </ul>
-    </section>
-
-    <!-- How to Use -->
-    <section class="section" id="use">
-      <h2>How to Use Yi-Ya</h2>
-      <ul>
-        <li>Define your own research question and study design as usual (Yi-Ya does not constrain methods).</li>
-        <li>Use Yi-Ya’s core constructs to describe early vocal units and developmental trajectories in a comparable way.</li>
-        <li>Optionally adopt templates/tools (logs, tagging sheets, minimal reporting dimensions) if helpful.</li>
-        <li>Report findings using the shared logic so results can be compared across sites and languages.</li>
-      </ul>
-    </section>
-
-    <!-- How to Refer -->
-    <section class="section" id="refer">
-      <h2>How to Refer to Yi-Ya</h2>
-      <p>Recommended phrasing:</p>
-      <ul>
-        <li><strong>“Yi-Ya is a shared research framework for early speech onset (0–3).”</strong></li>
-        <li><strong>“Our study adopts the Yi-Ya framework for cross-comparable reporting of early vocal development.”</strong></li>
-      </ul>
-      <p class="small">
-        If you cite theoretical grounding, you may reference the “Initial-Final Induction Principle” (paper + patent) as the origin of the framework’s descriptive logic.
-      </p>
-    </section>
-
-    <!-- Scientific Question -->
-    <section class="section" id="question">
-      <h2>Scientific Question</h2>
-      <p>How does language begin to form inside the infant brain <em>before</em> semantic understanding emerges?</p>
-    </section>
-
-    <!-- Theoretical Basis -->
-    <section class="section" id="theory">
-      <h2>Theoretical Basis</h2>
-      <p>
-        This program is grounded in the Initial-Final Induction Principle, presented in the 2008 peer-reviewed paper
-        <em>The Potential Vocal Ability of Infants</em> and supported by the invention patent
-        <em>Method and Device for Identifying Potential Vocal Characters in Infants</em>.
-      </p>
-      <p>Instead of analyzing large corpora post-language development, we study the <strong>birth</strong> of phonetic networks as they first emerge.</p>
-    </section>
-
-    <section class="section" id="platform">
-  <h2>Research Platform</h2>
+<!-- 0) 概览 / 首屏后正文起点 -->
+<section class="section" id="overview">
+  <h2>咿呀学语：0–3岁语言起始机制的研究与实践框架（Phase-1）</h2>
   <p>
-Yi-Ya does not require a centralized experimental platform.
-
-Instead, it defines a shared reference layer that can be applied across diverse research settings to support the observation, documentation, and comparison of early speech onset processes.
-
+    语言的起始远早于“开口说话”这一显性时刻。在稳定词义与可辨识词汇出现之前，婴幼儿已通过大量自发发声的尝试、组合与选择性稳定，逐步构建其最早的语音结构原型与节律模式。
   </p>
   <p>
-    Where appropriate, reference materials, example measurement dimensions, or optional tools may be made available to assist researchers in organizing and reporting their observations.
-  </p>
-  <p>
-    All data collection, experimental design, and analytical procedures remain fully determined by individual studies, in accordance with local research practices, technical setups, and ethical approvals.
+    <strong>yyxy.org（Phase-1）</strong>旨在系统呈现本框架当前阶段的理论视角、核心研究议题以及基于家庭自然情境的低负担实践路径。内容将伴随研究进程持续更新与深化。
   </p>
 </section>
 
-   <section class="section" id="collab">
-  <h2>Phase-1 Collaboration Model</h2>
-  <p class="muted">
-    In Phase-1, the Yi-Ya framework may be adopted by independent studies under the following guiding principles:
-  </p>
+<!-- 一、框架界定 -->
+<section class="section" id="scope">
+  <h2>一、框架界定</h2>
 
+  <h3>1.1 咿呀学语是</h3>
   <ul>
-    <li>Participating researchers define their own research questions, designs, and variables, in accordance with their disciplinary traditions and institutional requirements.</li>
-    <li>Yi-Ya provides a shared descriptive backbone—including core concepts and reporting logic—that supports cross-study comparability without enforcing a single protocol.</li>
-    <li>Tools, templates, or reference materials (e.g., structured observation logs, tagging sheets, or optional digital tools) may be used optionally, but are not required.</li>
-    <li>Authorship, data handling, and ethical approvals remain entirely study-specific, and are determined independently by participating researchers and their institutions.</li>
+    <li><strong>一项专注于0–3岁语言能力如何从无到有“涌现”的长期研究与生态化实践探索</strong>，核心关切在于“前词汇阶段”语音结构的自组织过程。</li>
+    <li><strong>一个系统化描述与比较的研究框架</strong>：围绕婴幼儿早期语音产出的类型、组合模式与发展轨迹，构建可供科学讨论与跨案例对照的描述体系。</li>
+    <li><strong>一个连接基础理论、家庭生态与研究参与路径的开放框架</strong>：强调在真实互动情境中观察与记录，以支持跨家庭、跨文化、跨学科的知识对话与累积。</li>
   </ul>
+
+  <h3>1.2 咿呀学语不是</h3>
+  <ul>
+    <li>早教培训课程、商业化产品体系或干预矫正方案。</li>
+    <li>以“加速语言出现”为目标的绩效训练。</li>
+    <li>儿歌或娱乐内容聚合平台（如涉及相关内容，仅作为研究与实践载体，而非项目目标）。</li>
+  </ul>
+
+  <h3>1.3 为何必须明确“不是”</h3>
+  <p>
+    在常见语境中，“语言启蒙”容易被简化为外部输入与机械训练。本框架的基本立场是：语言能力是婴幼儿自身的神经—认知—运动发育与高质量社会性互动共同作用下“生长”出来的复杂产物；其起始机制重在<strong>发现、描述与理解</strong>，而非单向“教会”。
+  </p>
 </section>
 
-    <!-- Outputs -->
-    <section class="section" id="outputs">
-      <h2>Expected Outputs & Scientific Goal</h2>
-      <ul>
-        <li>A descriptive model of early phonetic-network formation during the first three years of life.</li>
-        <li>Cross-linguistic, cross-study comparable records of early vocal development using shared observational dimensions.</li>
-        <li>A framework supporting systematic investigation of early speech emergence prior to stable semantic understanding.</li>
-      </ul>
-    </section>
+<!-- 二、理论基础 -->
+<section class="section" id="theory">
+  <h2>二、理论基础：声韵母诱发律与潜在发音能力</h2>
 
-    <hr class="divider" />
+  <p>
+    传统语言发展研究常以已显性化的词汇、语法作为观察起点。本框架锚定一个更基础的问题：在语义理解充分显性化之前，婴幼儿大量“前意义”的自发发声，是否以及如何体现出语音系统的结构化自组织进程？
+  </p>
 
-    <!-- Team -->
-    <section class="section" id="team">
-      <h2>Lead Investigator</h2>
-      <h3>William Tang</h3>
-      <p><strong>Founder &amp; Principal Research Initiator</strong></p>
-      <p class="muted">
-        Founder of the “Initial-Final Induction Principle” and initiator of the Yi-Ya LearnSpeak research program.
-      </p>
-      <p class="email"><a href="mailto:mrtang@eya.net">mrtang@eya.net</a></p>
+  <h3>2.1 核心概念：声韵母诱发律</h3>
+  <p>
+    基于对婴儿自然发音轨迹的精细记录与分析，本框架提出“<strong>声韵母诱发律</strong>”作为描述这一进程的核心概念：当婴幼儿能够稳定发出包含特定声母或韵母的字词时，其生理—认知系统便已具备将<strong>已掌握的声母/韵母单元进行迁移与重组</strong>、从而生成更多潜在组合的能力。
+  </p>
 
-      <h2 style="margin-top:22px;">Advisor</h2>
-      <h3>Jim Tang</h3>
-      <p><strong>Strategic &amp; Technical Advisor</strong></p>
-      <p class="small">For first-contact emails, please include your lab name and PI.</p>
-    </section>
+  <h3>2.2 关键机制：潜在发音能力与“潜在发音字”</h3>
+  <p>为说明“诱发”如何发生，本框架引入两个工作概念：</p>
+  <ul>
+    <li><strong>潜在发音能力（potential vocal ability）</strong>：指在已掌握若干声母/韵母单元后，个体对新组合形式在发声层面的“可达性”与可生成空间。</li>
+    <li><strong>潜在发音字（potential vocal character）</strong>：指由已掌握的声母/韵母单元重组而成、在发声层面“具备可生成条件”、但尚未成为稳定输出的组合单位。</li>
+  </ul>
 
-    <footer>
-      Yi-Ya LearnSpeak — Global Infant Language Origin Research Program (0–3y) •
-      <a href="http://www.yyxy.org" rel="noopener">中文站</a> • © 2026
-    </footer>
-  </div>
-</body>
-</html>
+  <p>
+    <strong>例（说明性）：</strong>当婴儿分别稳定掌握包含声母<strong>[b]</strong>的“爸”<strong>[ba]</strong>与包含韵母<strong>[ao]</strong>的“要”<strong>[yao]</strong>后，便可能潜在具备将<strong>[b] + [ao]</strong>重组生成“抱”<strong>[bao]</strong>的发声条件。
+    在这一意义上，早期发音不是孤立事件，而更像“搭积木”：已掌握单元不断迁移、重组，使潜在发音空间系统性扩展。
+  </p>
 
+  <h3>2.3 诱发与筛选：互动反馈的作用</h3>
+  <p>
+    “潜在”并不等于“立即出现为稳定输出”。从潜在能力到实际产出，往往需要经历“发声—反馈—再发声调整”的循环。养育者及时、恰当的互动反馈（如情感性回应、模仿、扩展）在其中可能发挥<strong>诱发与筛选</strong>作用：它并非“训练”，而是为自组织过程提供可感知的环境信号，使某些组合更可能被重复、被保留并逐渐稳定。
+  </p>
 
+  <h3>2.4 理论定位（重要边界）</h3>
+  <p>
+    本框架强调该理论的<strong>描述性与启发性角色</strong>：它旨在提供一个观察与理解早期语音自组织过程的透镜，而非设定普适标准，更不用于个体发展评价、诊断或教学承诺。
+  </p>
+</section>
 
+<!-- 三、核心研究焦点 -->
+<section class="section" id="agenda">
+  <h2>三、核心研究焦点（Phase-1）</h2>
 
+  <p>
+    本阶段研究的核心并非判定“孩子是否已会说话”，而是探索“可言说状态”如何从无意识的发声活动中逐步演进：从随机发声，到有节律的重复，再到形成可识别、可复现的声韵组合模式。
+  </p>
+
+  <h3>3.1 Phase-1 核心研究问题</h3>
+  <ul>
+    <li><strong>语音结构的涌现：</strong>最早的声母、韵母及其组合模式，如何从偶然尝试发展为可重复的稳定模式？在不同个体与语言环境中，是否存在可比较的涌现路径或共同维度？</li>
+    <li><strong>模式的稳定与转换：</strong>哪些语音结构更易被个体选择并固化？阶段性特征如何呈现？阶段过渡期在行为、发音节律与组合复杂度上有哪些可观察变化？</li>
+    <li><strong>互动与环境的影响：</strong>养育者的回应策略（如模仿、扩展）及家庭语言环境的韵律特征，如何影响婴幼儿对特定发音尝试的注意、选择与稳定化进程？</li>
+  </ul>
+
+  <h3>3.2 方法论声明</h3>
+  <p>
+    本研究采用<strong>过程导向的描述性范式</strong>：不追求单一结果性指标，而致力于对语言起始这一动态过程进行精细刻画，并构建跨情境可比较的描述语言。
+  </p>
+</section>
+
+<!-- 四、实践路径 -->
+<section class="section" id="practice">
+  <h2>四、实践路径：语言启发实践（非干预、低负担）</h2>
+
+  <p>
+    咿呀学语倡导的“语言启发实践”并非预设训练课程。它的本质是：在家庭日常生活流中，以低负担、非干预的方式，帮助养育者与研究者<strong>看见、记录并理解</strong>语言从无到有过程中细微却关键的可观察线索。
+  </p>
+
+  <h3>4.1 Phase-1 实践原则</h3>
+  <ul>
+    <li><strong>以自然发声为原点：</strong>关注婴幼儿内驱自发的发音行为，不设定外部强加的发音目标。</li>
+    <li><strong>低负担与非干预性：</strong>完全融入日常照料与互动，不增加家庭额外负担，不打断儿童自然发展节奏。</li>
+    <li><strong>重视回应，而非纠正：</strong>将及时、共情、富有语言营养的回应视为核心环境支持，摒弃“纠错”导向。</li>
+    <li><strong>过程可观察、可记录：</strong>通过简便方式进行长期连续记录，关注发展轨迹与变化模式，而非单点能力评估。</li>
+  </ul>
+
+  <h3>4.2 可信性来源（克制表达）</h3>
+  <p>
+    本实践路径的价值不依赖个别“成功案例”，而在于其<strong>可讨论、可检验、可对照</strong>：不神话技巧，坦然面对个体差异与不确定性，并始终服务于第3节所列核心研究问题。
+  </p>
+</section>
+
+<!-- 五、术语与观察维度 -->
+<section class="section" id="terms">
+  <h2>五、术语与观察维度（Phase-1 · 精简版）</h2>
+
+  <p>
+    本节概述 Phase-1 所采用的核心术语与观察维度。它们用于描述、记录与比较前词汇阶段语言发生过程，<strong>不用于个体评估或能力判定</strong>。相关定义与操作细则将随研究推进逐步细化。
+  </p>
+
+  <h3>5.1 核心术语（工作定义）</h3>
+  <ul>
+    <li><strong>自发发声（Spontaneous Vocalization）：</strong>无外部指令或明确模仿要求下，由婴幼儿自主发起的发音行为。</li>
+    <li><strong>前词汇阶段（Pre-lexical Stage）：</strong>稳定词义尚未形成前，以发声尝试、节律重复与组合探索为主要特征的发展阶段。</li>
+    <li><strong>声韵组合（Initial–Final Combination）：</strong>起始成分与延续成分的组合形式，用于描述早期语音结构的基本单元。</li>
+    <li><strong>选择性稳定（Selective Stabilization）：</strong>某些发声/组合在时间维度上频率上升并趋于稳定的过程。</li>
+    <li><strong>互动反馈（Interactive Feedback）：</strong>养育者或环境对婴幼儿发声的回应，包括情感性、节律性或模仿/扩展性反馈。</li>
+    <li><strong>潜在发音能力 / 潜在发音字：</strong>见第2节（2.2），用于描述已掌握单元的迁移重组与可生成空间。</li>
+  </ul>
+
+  <h3>5.2 主要观察维度（示例）</h3>
+  <ul>
+    <li><strong>发声类型分布：</strong>不同发声形式的频率与变化趋势。</li>
+    <li><strong>组合复杂度：</strong>从单一成分到多成分组合的发展轨迹。</li>
+    <li><strong>重复与节律特征：</strong>重复模式、节律稳定性及其变化。</li>
+    <li><strong>回应类型：</strong>养育者回应方式（重复、扩展、情感性回应等）的出现情况。</li>
+    <li><strong>稳定化迹象：</strong>特定组合是否出现持续出现与固化趋势。</li>
+    <li><strong>情境关联：</strong>发声与生活情境（游戏、进食、互动停顿等）的对应关系。</li>
+  </ul>
+
+  <h3>5.3 范围说明与使用边界（Phase-1）</h3>
+  <p>
+    上述术语与维度用于支持跨家庭、跨情境的描述性比较，不构成发展路径标准或评分体系。个体差异与“非典型”表现被视为理解语言发生多样性的关键素材。
+  </p>
+</section>
+
+<!-- 六、研究合作 -->
+<section class="section" id="collaboration">
+  <h2>六、研究合作（Phase-1）：去中心化的共同研究空间</h2>
+
+  <p>
+    咿呀学语旨在与研究者及实践者共同塑造一个可观察、可对话、可渐进深化的学术空间。合作不意味着执行统一指令或使用指定工具，也非产品化开发。
+  </p>
+
+  <h3>6.1 合作的基本前提</h3>
+  <ul>
+    <li><strong>合作方自主性：</strong>研究设计、数据采集、伦理审查与结论得出，均由合作方依据自身学术规范独立负责。</li>
+    <li><strong>框架共享而非工具绑定：</strong>提供理论视角与共享描述维度，不强制特定协议或平台。</li>
+    <li><strong>清晰实践边界：</strong>实践用于“使理论可见”，不构成教学承诺或临床干预方案。</li>
+  </ul>
+
+  <h3>6.2 欢迎的合作类型（示例）</h3>
+  <ul>
+    <li>早期语言发展相关的学术研究及跨学科对话。</li>
+    <li>基于家庭自然情境的观察方法学创新与记录实践探索。</li>
+    <li>教育创新或公益领域内，以非干预、过程记录为原则的探索性项目。</li>
+  </ul>
+
+  <p><strong>理解合作的三大基石：</strong>理论 · 研究问题 · 实践路径</p>
+</section>
+
+<!-- 七、项目进展与记录 -->
+<section class="section" id="progress">
+  <h2>七、项目进展与记录（Phase-1）</h2>
+  <p>
+    本栏目用于发布阶段性研究思考、网站更新日志及合作动态。Phase-1 将逐步完善并开放部分资源，例如：术语集、观察维度示例、非强制性的记录参考模板等。
+  </p>
+  <p>
+    我们秉持严谨求实的科学态度，更看重研究过程的扎实展开与知识的逐步累积，而非急于给出定论。
+  </p>
+</section>
+
+<!-- 八、项目团队 -->
+<section class="section" id="team">
+  <h2>八、项目团队</h2>
+
+  <h3>负责人</h3>
+  <p>
+    <strong>唐卫东（William Tang）</strong><br>
+    创始人 &amp; 主要研究发起人<br>
+    “声韵母诱发律”提出者；“咿呀学语”0–3岁语言起始机制研究与实践框架发起人<br>
+    📧 <a class="email" href="mailto:mrtang@yyxy.org">mrtang@yyxy.org</a>
+  </p>
+
+  <h3>顾问</h3>
+  <p>
+    <strong>Jim Tang</strong><br>
+    战略与技术顾问<br>
+    首次联系请提供：机构/实验室名称及项目负责人（PI）信息
+  </p>
+</section>
+
+<!-- 九、关于本网站 -->
+<section class="section" id="site">
+  <h2>九、关于本网站（Phase-1说明）</h2>
+  <p>
+    yyxy.org 当前版本旨在系统呈现“咿呀学语”研究框架在 Phase-1 的整体构想、理论核心与实践方向。部分内容仍在持续梳理与深化中，并将伴随研究推进定期更新。
+  </p>
+  <p>
+    本网站内容旨在促进对婴幼儿语言起始机制的科学理解与学术交流，不构成任何形式的教学承诺或临床干预方案。
+  </p>
+
+  <p><a href="#overview">↑ 返回顶部</a></p>
+</section>
